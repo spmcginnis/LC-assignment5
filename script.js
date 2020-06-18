@@ -64,13 +64,17 @@ function checkStatus(pilot, copilot, fuelAmt, cargoAmt) {
    //checkfuel
    if (fuelAmt < 10000) {
       faults += 1;
-      fuelStatus.innerHTML = 'Fuel Level Insufficient.';
+      fuelStatus.innerHTML = 'Fuel Level Insufficient.'
+   } else if (fuelAmt >= 10000) {
+      fuelStatus.innerHTML = 'Fuel Level Sufficient.'
    }
 
    //checkcargo
    if (cargoAmt > 10000) {
       faults += 1;
       cargoStatus.innerHTML = 'Total mass in excess of 10000 kg. Shuttle will not reach orbit.'
+   } else if (cargoAmt <= 10000) {
+      cargoStatus.innerHTML = 'Cargo mass acceptible.'
    }
 
    //check faults
